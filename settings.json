@@ -1,0 +1,117 @@
+ {
+   // 只需要把以下部分加入到settings.json的最后面（注意要做最外侧大括号内）
+  "latex-workshop.latex.autoBuild.run": "onSave", // 何时使用默认的(第一个)编译链自动构建 LaTeX 项目
+  "latex-workshop.showContextMenu": true, // 启用上下文LaTeX菜单
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": true,
+  "latex-workshop.latex.tools": [
+      {
+          "name": "xelatex",
+          "command": "xelatex",
+          "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOCFILE%"
+          ]
+      },
+      {
+          "name": "pdflatex",
+          "command": "pdflatex",
+          "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOCFILE%"
+          ]
+      },
+      {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOCFILE%"
+          ]
+      },
+      {
+          "name": "bibtex",
+          "command": "bibtex",
+          "args": [
+              "%DOCFILE%"
+          ]
+      }
+  ],
+  "latex-workshop.latex.recipes": [
+      {
+          "name": "XeLaTeX（对非拉丁字体的支持更好）",
+          "tools": [
+              "xelatex"
+          ]
+      },
+      {
+          "name": "PDFLaTeX（编译更快）",
+          "tools": [
+              "pdflatex"
+          ]
+      },
+      {
+          "name": "BibTeX",
+          "tools": [
+              "bibtex"
+          ]
+      },
+      {
+          "name": "LaTeXmk",
+          "tools": [
+              "latexmk"
+          ]
+      },
+      {
+          "name": "xelatex -> bibtex -> xelatex*2",
+          "tools": [
+              "xelatex",
+              "bibtex",
+              "xelatex",
+              "xelatex"
+          ]
+      },
+      {
+          "name": "pdflatex -> bibtex -> pdflatex*2",
+          "tools": [
+              "pdflatex",
+              "bibtex",
+              "pdflatex",
+              "pdflatex"
+          ]
+      },
+  ],
+  "latex-workshop.latex.clean.fileTypes": [
+      "*.aux",
+      "*.bbl",
+      "*.blg",
+      "*.idx",
+      "*.ind",
+      "*.lof",
+      "*.lot",
+      "*.out",
+      "*.toc",
+      "*.acn",
+      "*.acr",
+      "*.alg",
+      "*.glg",
+      "*.glo",
+      "*.gls",
+      "*.ist",
+      "*.fls",
+      "*.log",
+      "*.fdb_latexmk"
+  ],
+  "latex-workshop.latex.autoClean.run": "onFailed",
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+}
