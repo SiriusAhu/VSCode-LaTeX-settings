@@ -1,5 +1,5 @@
  {
-   // 只需要把以下部分加入到settings.json的最后面（注意要做最外侧大括号内）
+   // 只需要把以下部分加入到settings.json的最后面（注意要在最外侧大括号内）
   "latex-workshop.latex.autoBuild.run": "onSave", // 何时使用默认的(第一个)编译链自动构建 LaTeX 项目
   "latex-workshop.showContextMenu": true, // 启用上下文LaTeX菜单
   "latex-workshop.intellisense.package.enabled": true,
